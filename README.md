@@ -54,7 +54,7 @@ Splits follow the CAMELS-PL benchmark: training 2005-11-01..2015-12-31, validati
    python src/robustness.py
    ```
 
-The simulation files (`sim_*.npy`, about 80 MB) are not stored in git. They will be archived on Zenodo with the release.
+The simulation files (`sim_*.npy`, about 100 MB) are not stored in git. They are attached to the [v1.0-iccies2027 release](https://github.com/facingshootingstar/camels-pl-boris/releases/tag/v1.0-iccies2027) as `camels-pl-boris-simulations.zip`; unzip it into `results/kaggle_out/` and run `analyze.py` and `robustness.py` to skip the Kaggle step.
 
 ## License
 
