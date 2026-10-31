@@ -1,0 +1,24 @@
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
+
+# Manuscript, reviews and literature notes are not part of the code release.
+/paper/
+/reviews/
+/literature/
+
+# Large Kaggle outputs (simulations, eval_ref.npz): to be archived on Zenodo, not in git.
+/results/kaggle_out/
+/results/full_A/
+/results/full_B/
+/results/full_C/
+/results/smoke/
+/kaggle/explore/out/
+# Copies of CAMELS-PL attribute files: obtain them from the dataset itself (see README).
+/results/kaggle_prep/*.csv
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.kaggle/
+kaggle.json
+access_token

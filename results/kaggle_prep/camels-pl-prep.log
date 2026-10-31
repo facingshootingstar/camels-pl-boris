@@ -1,0 +1,53 @@
+[{"stream_name":"stdout","time":372.429860246,"data":"{\n"}
+,{"stream_name":"stdout","time":372.429908832,"data":" \"md5\": \"0ff7d9635c941f4aac49c191376502c9\",\n"}
+,{"stream_name":"stdout","time":372.429968777,"data":" \"N\": 354,\n"}
+,{"stream_name":"stdout","time":372.429972763,"data":" \"T\": 26968,\n"}
+,{"stream_name":"stdout","time":372.429975277,"data":" \"dyn\": [\n"}
+,{"stream_name":"stdout","time":372.429977757,"data":"  \"precipitation_mean\",\n"}
+,{"stream_name":"stdout","time":372.429980231,"data":"  \"temperature_mean\",\n"}
+,{"stream_name":"stdout","time":372.429982732,"data":"  \"maximum_temperature_mean\",\n"}
+,{"stream_name":"stdout","time":372.429985187,"data":"  \"minimum_temperature_mean\",\n"}
+,{"stream_name":"stdout","time":372.429987507,"data":"  \"relative_humidity_mean\",\n"}
+,{"stream_name":"stdout","time":372.42999022,"data":"  \"radiation_global_mean\"\n"}
+,{"stream_name":"stdout","time":372.429992686,"data":" ],\n"}
+,{"stream_name":"stdout","time":372.429995217,"data":" \"static\": [\n"}
+,{"stream_name":"stdout","time":372.429998687,"data":"  \"area_metadata\",\n"}
+,{"stream_name":"stdout","time":372.430002407,"data":"  \"elev_mean\",\n"}
+,{"stream_name":"stdout","time":372.430005982,"data":"  \"elev_std\",\n"}
+,{"stream_name":"stdout","time":372.430009508,"data":"  \"elev_min\",\n"}
+,{"stream_name":"stdout","time":372.430013268,"data":"  \"elev_max\",\n"}
+,{"stream_name":"stdout","time":372.430017071,"data":"  \"p_mean\",\n"}
+,{"stream_name":"stdout","time":372.43002074,"data":"  \"p_seasonality\",\n"}
+,{"stream_name":"stdout","time":372.43002451,"data":"  \"frac_snow\",\n"}
+,{"stream_name":"stdout","time":372.430028654,"data":"  \"high_prec_freq\",\n"}
+,{"stream_name":"stdout","time":372.430032429,"data":"  \"high_prec_dur\",\n"}
+,{"stream_name":"stdout","time":372.430036494,"data":"  \"low_prec_freq\",\n"}
+,{"stream_name":"stdout","time":372.430040171,"data":"  \"low_prec_dur\",\n"}
+,{"stream_name":"stdout","time":372.430043904,"data":"  \"artificial_surfaces_perc\",\n"}
+,{"stream_name":"stdout","time":372.430047821,"data":"  \"agricultural_areas_perc\",\n"}
+,{"stream_name":"stdout","time":372.430051649,"data":"  \"forests_and_seminatural_areas_perc\",\n"}
+,{"stream_name":"stdout","time":372.430055541,"data":"  \"wetlands_perc\",\n"}
+,{"stream_name":"stdout","time":372.43005922,"data":"  \"water_bodies_perc\",\n"}
+,{"stream_name":"stdout","time":372.430063178,"data":"  \"clay_0_30cm_mean\",\n"}
+,{"stream_name":"stdout","time":372.430066901,"data":"  \"sand_0_30cm_mean\",\n"}
+,{"stream_name":"stdout","time":372.430070482,"data":"  \"silt_0_30cm_mean\",\n"}
+,{"stream_name":"stdout","time":372.430074127,"data":"  \"bulk_density_0_30cm_mean\",\n"}
+,{"stream_name":"stdout","time":372.430076807,"data":"  \"soil_organic_carbon_0_30cm_mean\"\n"}
+,{"stream_name":"stdout","time":372.430079276,"data":" ],\n"}
+,{"stream_name":"stdout","time":372.430081552,"data":" \"input_nan_frac_before_fill\": {\n"}
+,{"stream_name":"stdout","time":372.43008397,"data":"  \"precipitation_mean\": 0.0,\n"}
+,{"stream_name":"stdout","time":372.430086454,"data":"  \"temperature_mean\": 0.0,\n"}
+,{"stream_name":"stdout","time":372.430088798,"data":"  \"maximum_temperature_mean\": 0.0,\n"}
+,{"stream_name":"stdout","time":372.430092056,"data":"  \"minimum_temperature_mean\": 0.0,\n"}
+,{"stream_name":"stdout","time":372.430095846,"data":"  \"relative_humidity_mean\": 0.000720460491362854,\n"}
+,{"stream_name":"stdout","time":372.430099876,"data":"  \"radiation_global_mean\": 0.0006456700303519384\n"}
+,{"stream_name":"stdout","time":372.430103582,"data":" },\n"}
+,{"stream_name":"stdout","time":372.430116262,"data":" \"q_obs_frac_available\": 0.9100586047158633\n"}
+,{"stream_name":"stdout","time":372.430120938,"data":"}\n"}
+,{"stream_name":"stderr","time":375.146847281,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":375.146891837,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":375.512507898,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":375.5125387,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":377.16266806,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":378.394506124,"data":"[NbConvertApp] Writing 300509 bytes to __results__.html\n"}
+]

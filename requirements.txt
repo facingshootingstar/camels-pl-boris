@@ -1,0 +1,7 @@
+# Local analysis (src/). Versions used for the paper.
+numpy==2.4.6
+scipy==1.17.1
+pandas==3.0.1
+matplotlib==3.10.8
+# Kaggle training kernels (kaggle/train*) ran on the Kaggle image with torch 2.11.0+cu128 and LightGBM, Tesla T4 GPU.
+kaggle
