@@ -6,11 +6,11 @@ D:\learning material\Paper\Storm\src\robustness.py:71: RuntimeWarning: All-NaN s
   r[k] = 100 * (np.nanmax(s[i, max(t - 3, 0):t + 4]) - pk) / pk
 D:\learning material\Paper\Storm\src\robustness.py:51: RuntimeWarning: All-NaN slice encountered
   err = {k: 100 * (np.nanmax(np.where(w[None], s, np.nan), 1) - pk) / pk for k, s in models.items()}
-D:\learning material\Paper\Storm\src\robustness.py:169: RuntimeWarning: All-NaN slice encountered
+D:\learning material\Paper\Storm\src\robustness.py:171: RuntimeWarning: All-NaN slice encountered
   spk = np.nanmax(np.where(np.asarray((dates >= "2024-09-10") & (dates <= "2024-09-30"))[None], s, np.nan), 1)
 D:\learning material\Paper\Storm\src\robustness.py:51: RuntimeWarning: All-NaN slice encountered
   err = {k: 100 * (np.nanmax(np.where(w[None], s, np.nan), 1) - pk) / pk for k, s in models.items()}
-D:\learning material\Paper\Storm\src\robustness.py:241: RuntimeWarning: Mean of empty slice
+D:\learning material\Paper\Storm\src\robustness.py:243: RuntimeWarning: Mean of empty slice
   qb = np.nanmean(np.where(pre[None], Q, np.nan), 1)
 {
  "annmax": {
@@ -59,6 +59,20 @@ D:\learning material\Paper\Storm\src\robustness.py:241: RuntimeWarning: Mean of 
    "err_ood": -34.64834213256836,
    "err_in": -23.808597564697266
   },
+  "EarlyNse": {
+   "rho": -0.00178895004235741,
+   "p": 0.9545161813292479,
+   "n": 1019,
+   "err_ood": -29.37197494506836,
+   "err_in": -24.988388061523438
+  },
+  "LongThreeNse": {
+   "rho": -0.053169431777226245,
+   "p": 0.08981400022330054,
+   "n": 1019,
+   "err_ood": -34.562095642089844,
+   "err_in": -26.49022102355957
+  },
   "LGBM": {
    "rho": 0.04115175383710045,
    "p": 0.18932421192652057,
@@ -96,6 +110,16 @@ D:\learning material\Paper\Storm\src\robustness.py:241: RuntimeWarning: Mean of 
   "LongPeak": {
    "rho": 0.048747377514500805,
    "p": 0.6821340675175781,
+   "n": 73
+  },
+  "EarlyNse": {
+   "rho": 0.06380352955695423,
+   "p": 0.5917681323155204,
+   "n": 73
+  },
+  "LongThreeNse": {
+   "rho": 0.10613353079106506,
+   "p": 0.3714922105733609,
    "n": 73
   },
   "LGBM": {
@@ -181,6 +205,26 @@ D:\learning material\Paper\Storm\src\robustness.py:241: RuntimeWarning: Mean of 
    "grid_lo": 5.613663819549828,
    "grid_hi": 21.73999281507437,
    "grid_nc": 9
+  },
+  "LongThreeAbs": {
+   "med": 12.437886013660917,
+   "lo": 5.991457016983993,
+   "hi": 16.234879532019622,
+   "n_clusters": 19,
+   "sign_p": 0.000728607177734375,
+   "grid_lo": 6.126469155742952,
+   "grid_hi": 15.581875499177116,
+   "grid_nc": 14
+  },
+  "EarlyAbs": {
+   "med": 18.26278645302469,
+   "lo": 11.294127862204391,
+   "hi": 23.997893295824902,
+   "n_clusters": 19,
+   "sign_p": 0.004425048828125,
+   "grid_lo": 7.491626283127175,
+   "grid_hi": 25.78097183188256,
+   "grid_nc": 14
   }
  },
  "ood_river_systems": {
@@ -204,6 +248,16 @@ D:\learning material\Paper\Storm\src\robustness.py:241: RuntimeWarning: Mean of 
    "err_inrange": 30.457254429818427,
    "n_below50": 23,
    "n_above50": 16
+  },
+  "LongThreeNse": {
+   "err_inrange": 27.75889637198372,
+   "n_below50": 22,
+   "n_above50": 17
+  },
+  "EarlyNse": {
+   "err_inrange": -2.497544209844434,
+   "n_below50": 31,
+   "n_above50": 17
   }
  },
  "exceed_own_max": {
@@ -213,6 +267,8 @@ D:\learning material\Paper\Storm\src\robustness.py:241: RuntimeWarning: Mean of 
   "BasePeak": 11,
   "LongNse": 9,
   "LongPeak": 7,
+  "EarlyNse": 7,
+  "LongThreeNse": 8,
   "LGBM": 13
  },
  "sensitivity": {

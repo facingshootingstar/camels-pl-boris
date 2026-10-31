@@ -27,6 +27,16 @@ D:\learning material\Paper\Storm\src\analyze.py:83: RuntimeWarning: All-NaN slic
    "mean": 0.7112429738044739,
    "std": 0.009290657006204128
   },
+  "LSTM early_nse": {
+   "n": 3,
+   "mean": 0.698204755783081,
+   "std": 0.01133418083190918
+  },
+  "LSTM long3x_nse": {
+   "n": 3,
+   "mean": 0.7235636711120605,
+   "std": 0.013650896959006786
+  },
   "LightGBM": {
    "n": 3,
    "mean": 0.6424656510353088,
@@ -111,6 +121,32 @@ D:\learning material\Paper\Storm\src\analyze.py:83: RuntimeWarning: All-NaN slic
    "timing_abs_med_flood": 0.0,
    "rho_ood_err": -0.6679007774898187,
    "rho_p": 1.0839681644285024e-10
+  },
+  "LSTM early_nse": {
+   "nse_med": 0.7188875079154968,
+   "kge_med": 0.7283380311200778,
+   "fhv_med": -11.055389404296875,
+   "nse_neg": 13,
+   "pk_err_med_flood": -37.76481246948242,
+   "pk_abs_med_flood": 65.36368560791016,
+   "pk_err_med_ood": -66.91370391845703,
+   "under_frac_flood": 0.684931506849315,
+   "timing_abs_med_flood": 0.0,
+   "rho_ood_err": -0.6253548068616562,
+   "rho_p": 3.3266289387078624e-09
+  },
+  "LSTM long3x_nse": {
+   "nse_med": 0.7477476000785828,
+   "kge_med": 0.7508596018394689,
+   "fhv_med": -12.157675743103027,
+   "nse_neg": 4,
+   "pk_err_med_flood": -27.61819839477539,
+   "pk_abs_med_flood": 53.62541198730469,
+   "pk_err_med_ood": -52.67918395996094,
+   "under_frac_flood": 0.589041095890411,
+   "timing_abs_med_flood": 0.0,
+   "rho_ood_err": -0.5852770578797977,
+   "rho_p": 5.380184130794688e-08
   },
   "LightGBM": {
    "nse_med": 0.6498796343803406,
@@ -212,6 +248,40 @@ D:\learning material\Paper\Storm\src\analyze.py:83: RuntimeWarning: All-NaN slic
     "p": 0.010378450155258179
    }
   },
+  "LSTM early_nse vs LSTM base_nse": {
+   "nse": {
+    "n": 354,
+    "med_diff": -0.024970531463623047,
+    "p": 7.825489388435525e-12
+   },
+   "abs_peak": {
+    "n": 73,
+    "med_diff": 18.262784957885742,
+    "p": 2.7001602575182915e-05
+   },
+   "ood_err": {
+    "n": 27,
+    "med_diff": -18.123706817626953,
+    "p": 4.7460198402404785e-05
+   }
+  },
+  "LSTM long3x_nse vs LSTM base_nse": {
+   "nse": {
+    "n": 354,
+    "med_diff": -0.0036668777465820312,
+    "p": 0.13847781717777252
+   },
+   "abs_peak": {
+    "n": 73,
+    "med_diff": 12.437886238098145,
+    "p": 2.2380581867764704e-06
+   },
+   "ood_err": {
+    "n": 27,
+    "med_diff": -4.611083984375,
+    "p": 0.013010844588279724
+   }
+  },
   "LightGBM vs LSTM base_nse": {
    "nse": {
     "n": 354,
@@ -277,6 +347,30 @@ D:\learning material\Paper\Storm\src\analyze.py:83: RuntimeWarning: All-NaN slic
     -59.939414978027344,
     -48.8571662902832,
     -53.29048538208008
+   ]
+  },
+  "LSTM early_nse": {
+   "abs_flood": [
+    66.675048828125,
+    58.75730895996094,
+    65.18443298339844
+   ],
+   "err_ood": [
+    -70.44194793701172,
+    -58.75730895996094,
+    -67.91202545166016
+   ]
+  },
+  "LSTM long3x_nse": {
+   "abs_flood": [
+    58.58551788330078,
+    52.74312973022461,
+    48.86473083496094
+   ],
+   "err_ood": [
+    -52.67918395996094,
+    -44.716575622558594,
+    -57.216461181640625
    ]
   },
   "LightGBM": {

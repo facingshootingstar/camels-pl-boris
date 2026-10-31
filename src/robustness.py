@@ -141,11 +141,13 @@ def cboot(a, b, sel, nb=4000, cl=None):
 
 
 out["cluster_boot"] = {}
-for nm, a, b, sel in [("LongAbs", np.abs(err0["LongNse"]), np.abs(err0[REF]), flood0),
+for nm, a, b, sel in ([("LongAbs", np.abs(err0["LongNse"]), np.abs(err0[REF]), flood0),
                       ("LongOod", err0["LongNse"], err0[REF], ood0),
                       ("HbvOod", err0["HBV"], err0[REF], ood0),
                       ("BmHbvOod", err0["LSTMbm"], err0["HBV"], ood0),
-                      ("LgbmOod", err0["LGBM"], err0[REF], ood0)]:
+                      ("LgbmOod", err0["LGBM"], err0[REF], ood0)]
+                     + ([("LongThreeAbs", np.abs(err0["LongThreeNse"]), np.abs(err0[REF]), flood0)] if "LongThreeNse" in err0 else [])
+                     + ([("EarlyAbs", np.abs(err0["EarlyNse"]), np.abs(err0[REF]), flood0)] if "EarlyNse" in err0 else [])):
     med, lo, hi, nc, ps = cboot(a, b, sel); _, glo, ghi, gnc, _ = cboot(a, b, sel, cl=grid)
     out["cluster_boot"][nm] = dict(med=med, lo=lo, hi=hi, n_clusters=nc, sign_p=ps, grid_lo=glo, grid_hi=ghi, grid_nc=gnc)
     m("CB" + nm + "Med", med); m("CB" + nm + "Lo", lo); m("CB" + nm + "Hi", hi); m("CB" + nm + "NC", nc, "{:d}")
@@ -275,3 +277,22 @@ if HAS_P:
 json.dump(out, open(os.path.join(RES, "robustness.json"), "w"), indent=1, default=float)
 open(os.path.join(RES, "numbers_rob.tex"), "w").write("".join(mac).replace("{-", r"{\ensuremath{-}"))
 print(json.dumps(out, indent=1, default=float))
+
+# ---- 10. Paragraph with the control-run results (kernel C), read by the paper as \KCParagraph ----
+# The reading was fixed in the Methods before the runs finished; the wording below states the outcome
+# that the asserts check, so a change in the results breaks the build instead of the text.
+if {"LongThreeAbs", "EarlyAbs"} <= set(out["cluster_boot"]):
+    cb3, cbe = out["cluster_boot"]["LongThreeAbs"], out["cluster_boot"]["EarlyAbs"]
+    assert cb3["lo"] > 0, "long-3x no longer worse than base: rewrite the control paragraph"
+    assert cbe["lo"] > 0, "early no longer worse than base: rewrite the control paragraph"
+    kc = (r"\textbf{Control runs.} Long-3$\times$, which sees each sample as often as base, did not bring the error back "
+          r"to the base level: its median absolute Boris error on the flood gauges was \LongThreeNsePkAbs\% (seeds "
+          r"\LongThreeNseSeedAbsMin--\LongThreeNseSeedAbsMax), against \BaseNsePkAbs\% for base and \LongNsePkAbs\% for long. "
+          r"The paired increase over base was \CBLongThreeAbsMed{} points (river-system CI [\CBLongThreeAbsLo, \CBLongThreeAbsHi], "
+          r"sign test \CBLongThreeAbsSignP), as large as for long. Early, trained on 1981--2000 only, was worse still: "
+          r"absolute error \EarlyNsePkAbs\% (+\CBEarlyAbsMed{} [\CBEarlyAbsLo, \CBEarlyAbsHi]), OOD error \EarlyNsePkErrOOD\%, "
+          r"and test NSE \EarlyNseNSE{} against \BaseNseNSE{} for base. By the reading fixed in advance, reduced exposure does "
+          r"not explain the degradation, and the older data do. Early, however, also widens the gap between training and test "
+          r"period, so this control cannot separate a property of the 1981--2000 data, such as the changing station network "
+          r"behind the forcing, from that gap. The controls are reported without multiplicity adjustment.")
+    open(os.path.join(RES, "numbers_c.tex"), "w").write("\\newcommand{\\KCParagraph}{%s}\n" % kc)
