@@ -291,8 +291,10 @@ if {"LongThreeAbs", "EarlyAbs"} <= set(out["cluster_boot"]):
           r"The paired increase over base was \CBLongThreeAbsMed{} points (river-system CI [\CBLongThreeAbsLo, \CBLongThreeAbsHi], "
           r"sign test \CBLongThreeAbsSignP), as large as for long. Early, trained on 1981--2000 only, was worse still: "
           r"absolute error \EarlyNsePkAbs\% (+\CBEarlyAbsMed{} [\CBEarlyAbsLo, \CBEarlyAbsHi]), OOD error \EarlyNsePkErrOOD\%, "
-          r"and test NSE \EarlyNseNSE{} against \BaseNseNSE{} for base. By the reading fixed in advance, reduced exposure does "
-          r"not explain the degradation, and the older data do. Early, however, also widens the gap between training and test "
-          r"period, so this control cannot separate a property of the 1981--2000 data, such as the changing station network "
-          r"behind the forcing, from that gap. The controls are reported without multiplicity adjustment.")
+          r"test NSE \EarlyNseNSE{} (base \BaseNseNSE), in-range median \EarlyNseErrIn\% and \EarlyNseNBelowFifty{} gauges "
+          r"below $-50$\%. By the reading fixed in advance, reduced exposure does not explain the degradation: long-3$\times$ "
+          r"matches base in passes per sample and differs from it by the added 1981--2000 data. Early agrees, but it also lacks "
+          r"2005--2015, sees each sample about half as often and is further from the test period, so on its own it cannot "
+          r"isolate a property of the older data such as the changing forcing station network. Controls are not "
+          r"multiplicity-adjusted.")
     open(os.path.join(RES, "numbers_c.tex"), "w").write("\\newcommand{\\KCParagraph}{%s}\n" % kc)
