@@ -1,6 +1,6 @@
 # Data-driven models at the Storm Boris flood (CAMELS-PL)
 
-Code for the paper *How Well Do Data-Driven Models Reproduce a Record Flood? A Multi-Gauge Out-of-Sample Evaluation on Storm Boris (2024) with CAMELS-PL* (Nguyen Van Trong Hieu, Nguyen Trong Toan, Dang Trang Thanh Su, Ho Le Thien An; FPT University, Ho Chi Minh City).
+Code for the paper *How Well Do Data-Driven Models Reproduce a Record Flood? A Multi-Gauge Out-of-Sample Evaluation on Storm Boris (2024) with CAMELS-PL* (Nguyen Van Trong Hieu, Nguyen Trong Toan, Dang Trang Thanh Su; FPT University, Ho Chi Minh City).
 
 We train regional LSTMs (two training records × two losses, three seeds each) and LightGBM on CAMELS-PL, compare them with the dataset's benchmark LSTM and HBV, and evaluate the peaks of the September 2024 Storm Boris flood on 73 flood gauges in Poland.
 
@@ -55,6 +55,10 @@ Splits follow the CAMELS-PL benchmark: training 2005-11-01..2015-12-31, validati
    ```
 
 The simulation files (`sim_*.npy`, about 100 MB) are not stored in git. They are attached to the [v1.0-iccies2027 release](https://github.com/facingshootingstar/camels-pl-boris/releases/tag/v1.0-iccies2027) as `camels-pl-boris-simulations.zip`; unzip it into `results/kaggle_out/` and run `analyze.py` and `robustness.py` to skip the Kaggle step.
+
+## Use of generative AI
+
+As stated in the paper, generative AI tools (large language models) assisted with writing the experiment and analysis scripts in this repository, with drafting parts of the manuscript, and with checking the reported numbers against the result files. The authors checked every reported number against the per-gauge results here and take full responsibility for the content.
 
 ## License
 
